@@ -21,7 +21,7 @@ func heavyComputation(id int, wg *sync.WaitGroup) {
 }
 
 func main() {
-	// 1. Setting it to one ensures that we're actually using Concurrency - N tasks running while competing for
+	// 1. Setting it to 1 ensures that we're actually using Concurrency - N tasks running while competing for
 	// a single CPU Core. So the manager will schedule time for each task to be processed.
 	// 2. Setting it to N > 1 allows the tasks to be processed in parallel, parallelism, which is not the same as concurrency.
 	runtime.GOMAXPROCS(12)
